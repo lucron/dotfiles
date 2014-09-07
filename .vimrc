@@ -2,6 +2,12 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file                                                                                                                                                                                       
+let mapleader = ","
+let g:mapleader = ","
+
+
 " Set keybindings
 nmap <F8> :TagbarToggle<CR>
 map <F7> :NERDTreeToggle<CR>
@@ -27,11 +33,6 @@ endif
 
 " Disable toolbar in gvim
 :set guioptions-=T  "remove toolbar
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
 
 " Ignore case when searching
 set ignorecase
@@ -106,3 +107,8 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 " Remove warning about trailing whitespaces
 let g:airline_detect_whitespace=0
 
+" Go bindings
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)

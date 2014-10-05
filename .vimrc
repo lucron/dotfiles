@@ -3,10 +3,9 @@ syntax on
 filetype plugin indent on
 
 " With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file                                                                                                                                                                                       
+" like <leader>w saves the current file                                                                                                       
 let mapleader = ","
 let g:mapleader = ","
-
 
 " Set keybindings
 nmap <F8> :TagbarToggle<CR>
@@ -15,7 +14,15 @@ set pastetoggle=<F9>
 
 " Set gopath
 let $GOPATH="/home/soda/src"
-let $PATH= "/home/soda/Downloads/go/bin:" . $PATH
+let $PATH= "/usr/local/go/bin:" . $PATH
+
+" Set goimports
+let g:go_bin_path = "/usr/local/go/bin"
+let g:go_fmt_command = "goimports"
+
+" Copy selection to X11 clipboard
+set clipboard^=autoselect
+set guioptions+=a
 
 " Set font
 if has("gui_running")
@@ -27,12 +34,13 @@ if has("gui_running")
     set background=dark
     colorscheme molokai
 else
-    colorscheme desert
-    let g:colors_name="desert"
+    set background=dark
+    colorscheme molokai
+"    let g:colors_name="desert"
 endif
 
 " Disable toolbar in gvim
-:set guioptions-=T  "remove toolbar
+set guioptions=m  "remove menubar
 
 " Ignore case when searching
 set ignorecase
@@ -112,3 +120,4 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>i <Plug>(go-info)

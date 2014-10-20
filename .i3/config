@@ -100,10 +100,10 @@ bindsym $mod+2 workspace 2 term
 bindsym $mod+3 workspace 3 work
 bindsym $mod+4 workspace 4 code
 bindsym $mod+5 workspace 5 misc
-bindsym $mod+6 workspace 6 
-bindsym $mod+7 workspace 7 
-bindsym $mod+8 workspace 8 
-bindsym $mod+9 workspace 9 
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
@@ -154,11 +154,11 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.i3/autostart.sh
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id compton -b
+exec --no-startup-id compton -b --backend glx --vsync opengl-swc
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
+  status_command i3blocks
   colors {
     separator #666666
     background #222222
@@ -184,11 +184,11 @@ for_window [class="Xfce4-terminal"] border 1pixel
 for_window [class="^Spotify$"] floating enable
 
  #keymap
- bindcode 121 exec --no-startup-id amixer set Master toggle -q
- bindcode 122 exec --no-startup-id amixer set Master 10%- unmute -q
- bindcode 123 exec --no-startup-id amixer set Master 10%+ unmute -q
- bindcode 232 exec --no-startup-id xbacklight -dec 5
- bindcode 233 exec --no-startup-id xbacklight -inc 5
+ bindcode 121 exec --no-startup-id amixer set Master toggle -q && killall -SIGINT i3blocks
+ bindcode 122 exec --no-startup-id amixer set Master 10%- unmute -q && killall -SIGUSR1 i3blocks
+ bindcode 123 exec --no-startup-id amixer set Master 10%+ unmute -q && killall -SIGUSR1 i3blocks
+ bindcode 232 exec --no-startup-id xbacklight -dec 5 && killall -SIGUSR1 i3blocks
+ bindcode 233 exec --no-startup-id xbacklight -inc 5 && killall -SIGUSR1 i3blocks
  bindcode 237 exec --no-startup-id toggle.sh /sys/devices/platform/samsung/leds/samsung\:\:kbd_backlight/brightness 5
  bindcode 238 exec --no-startup-id toggle.sh /sys/devices/platform/samsung/leds/samsung\:\:kbd_backlight/brightness 5
 client.focused #0088CC #0088CC #ffffff #dddddd

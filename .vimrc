@@ -121,3 +121,9 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>i <Plug>(go-info)
+
+" This trigger takes advantage of the fact that the quickfix window can be
+" easily distinguished by its file-type, qf. The wincmd J command is
+" equivalent to the Ctrl+W, Shift+J shortcut telling Vim to move a window to
+" the very bottom (see :help :wincmd and :help ^WJ).
+autocmd FileType qf wincmd J

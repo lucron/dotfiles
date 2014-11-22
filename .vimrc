@@ -16,6 +16,9 @@ set pastetoggle=<F9>
 let $GOPATH="/home/soda/src"
 let $PATH= "/usr/local/go/bin:" . $PATH
 
+" Enable mouse support
+set mouse=a
+
 " Set goimports
 let g:go_bin_path = "/usr/local/go/bin"
 let g:go_fmt_command = "goimports"
@@ -41,7 +44,6 @@ if has("gui_running")
 else
     set background=dark
     colorscheme molokai
-"    let g:colors_name="desert"
 endif
 
 " Disable toolbar in gvim
@@ -79,6 +81,7 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
+set tabstop=4
 
 " Linebreak on 500 characters
 set lbr

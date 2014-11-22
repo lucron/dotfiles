@@ -20,6 +20,11 @@ let $PATH= "/usr/local/go/bin:" . $PATH
 let g:go_bin_path = "/usr/local/go/bin"
 let g:go_fmt_command = "goimports"
 
+" highlights
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 " Copy selection to X11 clipboard
 set clipboard^=autoselect
 set guioptions+=a
@@ -60,9 +65,6 @@ set encoding=utf8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
 " ruler on
 set ruler 
 
@@ -77,7 +79,6 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
-set tabstop=4
 
 " Linebreak on 500 characters
 set lbr

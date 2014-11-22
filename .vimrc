@@ -105,9 +105,20 @@ function! HasPaste()
     return ''
 endfunction
 
-
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+" Remove warning about trailing whitespaces
+let g:airline_detect_whitespace=0
+" Use powerline fonts
+let g:airline_powerline_fonts=1
+" Override colorscheme
+let g:airline_theme='simple'
+" fix unknown symbls in gvim
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\u3000"
 
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -116,13 +127,6 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 
-" Remove warning about trailing whitespaces
-let g:airline_detect_whitespace=0
-" Use powerline fonts
-let g:airline_powerline_fonts=1
-
-"override colorscheme
-let g:airline_theme='simple'
 " Go bindings
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)

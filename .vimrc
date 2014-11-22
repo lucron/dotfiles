@@ -118,7 +118,11 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 
 " Remove warning about trailing whitespaces
 let g:airline_detect_whitespace=0
+" Use powerline fonts
+let g:airline_powerline_fonts=1
 
+"override colorscheme
+let g:airline_theme='simple'
 " Go bindings
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)

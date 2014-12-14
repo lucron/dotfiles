@@ -119,6 +119,8 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\u3000"
+" fix insert delay
+set ttimeoutlen=50
 
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>

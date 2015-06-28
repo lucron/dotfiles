@@ -12,9 +12,8 @@ Xft.rgba: rgb
 URxvt.saveLines: 1000
 URxvt.scrollBar: false
 URxvt.secondaryScroll: true
-URxvt*font: xft:Source Code Pro for Powerline:pixelsize=11
-URxvt*boldFont: xft:Source Code Pro for Powerline:pixelsize=11:style=bold
-URxvt.perl-ext-common: default,matcher
+URxvt*font: xft:Source Code Pro for Powerline:pixelsize=14
+URxvt*boldFont: xft:Source Code Pro for Powerline:pixelsize=14:style=bold
 URxvt.tabbed.saveLines: 1000
 URxvt.tabbed.scrollBar: false
 URxvt.tabbed.tabbar-fg: 3
@@ -22,7 +21,7 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 0
 URxvt.tabbed.tab-bg: 1
 URxvt.tabbed.secondaryScroll: true
-URxvt.tabbed.font: xft:Source Code Pro Bold for Powerline:pixelsize=11
+URxvt.tabbed.font: xft:Source Code Pro for Powerline:pixelsize=14:style=bold
 URxvt*inheritPixmap: true 
 URxvt*shading: 70
 

@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Source Code Pro 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec echo -e "chromium\nfirefox\ngvim" | dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'Source Code Pro:Pixelsize=10'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -158,7 +158,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id samsung-tools -n
 exec --no-startup-id ~/.i3/autostart.sh
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id compton -b --backend glx --vsync opengl-swc
+#exec --no-startup-id compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id feh --bg-scale ~/.bg.png
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -188,6 +188,8 @@ for_window [class="Xfce4-terminal"] border 1pixel
 for_window [class="Chromium"] border 1pixel
 for_window [class="^Spotify$"] floating enable
 for_window [class="URxvt"] border 1pixel
+for_window [class="(?i)GVIM"] border 1pixel
+for_window [class="(?i)termite"] border 1pixel
 
  #keymap
  bindcode 121 exec --no-startup-id amixer set Master toggle -q && killall -SIGINT i3blocks

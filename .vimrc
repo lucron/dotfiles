@@ -13,14 +13,13 @@ map <F7> :NERDTreeToggle<CR>
 set pastetoggle=<F9>
 
 " Set gopath
-let $GOPATH="/home/soda/src"
-let $PATH= "/usr/local/go/bin:" . $PATH
+let $PATH= "/home/soda/go/bin:" . $PATH
 
 " Enable mouse support
 set mouse=a
 
 " Set goimports
-let g:go_bin_path = "/usr/local/go/bin"
+let g:go_bin_path = "/home/soda/go/bin"
 let g:go_fmt_command = "goimports"
 
 " highlights
@@ -34,15 +33,15 @@ set guioptions+=a
 
 " Set font
 if has("gui_running")
-	set guifont=Source\ Code\ Pro\ 9
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ 12
 endif
 
 " Colorscheme
 if has("gui_running")
-    set background=dark
-    colorscheme molokai
+    set background=light
+    colorscheme solarized
 else
-    set background=dark
+    set background=light
     colorscheme molokai
 endif
 
@@ -113,7 +112,7 @@ let g:airline_detect_whitespace=0
 " Use powerline fonts
 let g:airline_powerline_fonts=1
 " Override colorscheme
-let g:airline_theme='simple'
+let g:airline_theme='solarized'
 " fix unknown symbls in gvim
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

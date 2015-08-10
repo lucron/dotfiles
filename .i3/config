@@ -192,13 +192,12 @@ for_window [class="(?i)GVIM"] border 1pixel
 for_window [class="(?i)termite"] border 1pixel
 
  #keymap
- bindcode 121 exec --no-startup-id amixer set Master toggle -q && killall -SIGINT i3blocks
- bindcode 122 exec --no-startup-id amixer set Master 10%- unmute -q && killall -SIGUSR1 i3blocks
- bindcode 123 exec --no-startup-id amixer set Master 10%+ unmute -q && killall -SIGUSR1 i3blocks
- bindcode 232 exec --no-startup-id xbacklight -dec 5 && killall -SIGUSR1 i3blocks
- bindcode 233 exec --no-startup-id xbacklight -inc 5 && killall -SIGUSR1 i3blocks
- bindcode 237 exec --no-startup-id toggle.sh /sys/devices/platform/samsung/leds/samsung\:\:kbd_backlight/brightness 5
- bindcode 238 exec --no-startup-id toggle.sh /sys/devices/platform/samsung/leds/samsung\:\:kbd_backlight/brightness 5
+ bindcode 121 exec --no-startup-id amixer set Master toggle -q 
+ bindcode 122 exec --no-startup-id amixer set Master 10%- unmute -q 
+ bindcode 123 exec --no-startup-id amixer set Master 10%+ unmute -q 
+ bindcode 232 exec --no-startup-id xbacklight -dec 5 
+ bindcode 233 exec --no-startup-id xbacklight -inc 5 
+
 client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
